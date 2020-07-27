@@ -13,10 +13,7 @@ public class PlayerMoveControl : MovingObject
 
     private Animator animator;
     private PlayerHealth playerHealth;
-
-    [SerializeField]
-    private Text speedText;
-
+    
 
     // Start is called before the first frame update
     protected override void Start()
@@ -25,7 +22,6 @@ public class PlayerMoveControl : MovingObject
         playerHealth = GetComponent<PlayerHealth>();
         // Call the Start function of the MovingObject base class.
         base.Start();
-        UpdateSPDStatusText();
     }
 
     // Update is called once per frame
@@ -72,12 +68,14 @@ public class PlayerMoveControl : MovingObject
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Enemy") {
-            playerHealth.PlayerHit();
+            playerHealth.PlayerHit(other);
         }
     }
 
-    public void UpdateSPDStatusText() {
-        speedText.text = $"SPD: {base.speed}";
+    private void OnCollisionStay2D(Collision2D other) {
+        if (other.gameObject.tag == "Enemy") {
+            playerHealth.PlayerHit(other);
+        }
     }
 
 }

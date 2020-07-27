@@ -197,7 +197,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  speedText: {fileID: 0}
 --- !u!114 &114304336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,13 +213,9 @@ MonoBehaviour:
   pos: {fileID: 373469960}
   canAttack: 1
   range: 10
-  rangeText: {fileID: 0}
   coolTime: 0.3
-  attackSpeedText: {fileID: 0}
   damage: 3.5
-  dmgText: {fileID: 0}
   shotSpeed: 6
-  shotSpeedText: {fileID: 0}
   playerAttackDirection: {x: 0, y: 0}
 --- !u!114 &114304342
 MonoBehaviour:
@@ -234,22 +229,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa9e5ef6281981b43a9c086f49355318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 12
-  maxHealth: 12
+  health: 6
+  maxHealth: 6
   canBeHit: 1
-  hearts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   fullHeart: {fileID: 4449572975861231009, guid: 311ec9b2c516a234284d244fc90d0423,
     type: 3}
   halfHeart: {fileID: -5432046949310587472, guid: 311ec9b2c516a234284d244fc90d0423,
