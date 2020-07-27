@@ -4,6 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Bullet
+  - Walls
+  - Enemy
   - Wall
   layers:
   - Default
@@ -14,7 +17,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - BlockingLayer
   - 
   - 
   - 
@@ -39,6 +42,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Floor
+    uniqueID: 2034840443
+    locked: 0
+  - name: Icon
+    uniqueID: 2281244131
+    locked: 0
+  - name: Objects
+    uniqueID: 969342991
+    locked: 0
+  - name: Units
+    uniqueID: 4106254289
+    locked: 0
+  - name: Player
+    uniqueID: 786139253
+    locked: 0
+  - name: Bullet
+    uniqueID: 2020590987
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

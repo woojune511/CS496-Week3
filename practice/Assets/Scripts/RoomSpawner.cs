@@ -140,12 +140,12 @@ public class RoomSpawner: MonoBehaviour{
         if(Math.Abs(rmnd.room.room_position.x) > Math.Abs(furthest)){
             furthest = rmnd.room.room_position.x;
             bossRoom = rmnd;
-            Debug.Log($"furthest coordinate {rmnd.room.room_position.x}");
+            // Debug.Log($"furthest coordinate {rmnd.room.room_position.x}");
         }
         if(Math.Abs(rmnd.room.room_position.y) > Math.Abs(furthest)){
             furthest = rmnd.room.room_position.y;
             bossRoom = rmnd;
-            Debug.Log($"furthest coordinate {rmnd.room.room_position.y}");
+            // Debug.Log($"furthest coordinate {rmnd.room.room_position.y}");
         }
 
         rmnd.room.RenderRoom();
