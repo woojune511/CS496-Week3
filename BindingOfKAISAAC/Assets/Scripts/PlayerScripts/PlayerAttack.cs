@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -11,20 +12,25 @@ public class PlayerAttack : MonoBehaviour
 
     // -------------------------------[PLAYER STATUS]-------------------------------
     public float range; // 사정거리
+    [SerializeField]
+    private Text rangeText;
 
-    public float cooltime; // 공격 딜레이
-
+    public float coolTime; // 공격 딜레이
+    [SerializeField]
+    private Text attackSpeedText;
     public float damage; // 데미지
-
+    [SerializeField]
+    private Text dmgText;
     public float shotSpeed; // 투사체 속도
-
+    [SerializeField]
+    private Text shotSpeedText;
     // -----------------------------------------------------------------------------
     public Vector2 playerAttackDirection; // 플레이어가 바라보고 있는 방향
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        UpdateATKStatusText();
     }
 
     // Update is called once per frame
@@ -65,8 +71,15 @@ public class PlayerAttack : MonoBehaviour
 
      IEnumerator WaitForIt()
     {
-        yield return new WaitForSeconds(cooltime);
+        yield return new WaitForSeconds(coolTime);
         canAttack = true;
+    }
+
+    public void UpdateATKStatusText() {
+        rangeText.text = $"RAN: {range}";
+        attackSpeedText.text = $"ATS: {coolTime}";
+        dmgText.text = $"RAN: {damage}";
+        shotSpeedText.text = $"RAN: {shotSpeed}";
     }
     
 

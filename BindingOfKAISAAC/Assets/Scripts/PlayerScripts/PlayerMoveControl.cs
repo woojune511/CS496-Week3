@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 // 플레이어의 움직임을 제어하는 스크립트
@@ -13,6 +14,10 @@ public class PlayerMoveControl : MovingObject
     private Animator animator;
     private PlayerHealth playerHealth;
 
+    [SerializeField]
+    private Text speedText;
+
+
     // Start is called before the first frame update
     protected override void Start()
     {   
@@ -20,6 +25,7 @@ public class PlayerMoveControl : MovingObject
         playerHealth = GetComponent<PlayerHealth>();
         // Call the Start function of the MovingObject base class.
         base.Start();
+        UpdateSPDStatusText();
     }
 
     // Update is called once per frame
@@ -68,6 +74,10 @@ public class PlayerMoveControl : MovingObject
         if (other.gameObject.tag == "Enemy") {
             playerHealth.PlayerHit();
         }
+    }
+
+    public void UpdateSPDStatusText() {
+        speedText.text = $"SPD: {base.speed}";
     }
 
 }

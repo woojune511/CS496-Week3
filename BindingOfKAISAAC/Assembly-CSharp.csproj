@@ -46,7 +46,25 @@
      <Compile Include="Assets\Scripts\PlayerScripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\PlayerMoveControl.cs" />
      <None Include="Assets\spritefont_and_other\document_and_picturelist\readme.txt" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\ActRPGsprites\readme.txt" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
+     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/2019.4.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -576,85 +594,85 @@
         <HintPath>C:/Program Files/Unity/2019.4.4f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Runtime">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.PixelPerfect.Editor">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Editor">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Path.Editor">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Triangle.Runtime">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="PsdPlugin">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/PsdPlugin.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/PsdPlugin.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Psdimporter.Editor">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.Psdimporter.Editor.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.Psdimporter.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEngineBridge.001">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Common.Runtime">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.PixelPerfect">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Editor">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Common.Editor">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEditorBridge.001">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>E:/madcamp_week3/BindingOfKAISAAC/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+        <HintPath>E:/madcamp_week3_git/CS496-Week3/BindingOfKAISAAC/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
