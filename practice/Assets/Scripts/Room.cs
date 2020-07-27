@@ -19,14 +19,20 @@ public class Room: MonoBehaviour
         room_position = pos;
     }
 
+    public void RenderRoom(){
+        if(isBossRoom){
+            GameObject BossIcon = GameObject.Find("Boss Icon");
+            Instantiate(BossIcon, room_position + new Vector3(7.5f, 4.5f, -1), Quaternion.identity);
+        }
+        GetWall();
+        GetFloor();
+    }
+
     public void GetWall(){ 
         GameObject WallSprite = GameObject.Find("Wall"); // 나중에 리스트로 바꿔서 랜덤하게 sprite 넣기
         // WallSprite = AssetDatabase.FindAssets("Wall");
         // WallSprite.GetComponent<Renderer>().enabled = false;
-        if(isBossRoom){
-            GameObject BossIcon = GameObject.Find("Boss Icon");
-            Instantiate(BossIcon, room_position + new Vector3(5, 5, 0), Quaternion.identity);
-        }
+
         Contract.Requires(room_orient.Length == 4, $"Length of room_orient: {room_orient.Length}");
         for(int i=0; i<roomSize_x; i++){
             if(!room_orient[0] || (i!= 7 && i!= 8))

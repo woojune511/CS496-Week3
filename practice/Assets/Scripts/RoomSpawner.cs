@@ -25,7 +25,7 @@ public class RoomSpawner: MonoBehaviour{
         while(spawnedPositions.Count < min_room)
             SpawnRoom();
         bossRoom.room.isBossRoom = true;
-        bossRoom.room.GetWall();
+        bossRoom.room.RenderRoom();
     }
 
     void ResetParams(){
@@ -43,7 +43,7 @@ public class RoomSpawner: MonoBehaviour{
         ResetParams();
         Room initialRoom = new Room(new bool[]{true, true, true, true}, new Vector3(0,0,0));
         spawnedPositions.Add(new Vector3(0,0,0));
-        initialRoom.GetWall();
+        initialRoom.RenderRoom();
         topNode = new RoomTreeNode(initialRoom);
         
         CreateRoomTraverse(topNode);
@@ -148,8 +148,7 @@ public class RoomSpawner: MonoBehaviour{
             Debug.Log($"furthest coordinate {rmnd.room.room_position.y}");
         }
 
-        rmnd.room.GetFloor();
-        rmnd.room.GetWall();
+        rmnd.room.RenderRoom();
     }
 
     bool rndBool(){
