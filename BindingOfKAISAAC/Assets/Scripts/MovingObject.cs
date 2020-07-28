@@ -9,11 +9,14 @@ public abstract class MovingObject : MonoBehaviour
     // public float moveTime = 0.1f;
     // public LayerMask blockingLayer; // Layer on which collision will be checked.
 
-    private Collider2D Collider;
-    private Rigidbody2D rigidBody;
+    protected Collider2D Collider;
+    protected Rigidbody2D rigidBody;
+
+    private float forceMagnitude = 3.5f;
     // private float inverseMoveTime;
 
     private Vector2 vector;
+    private bool isKnockBacking = false;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -26,9 +29,24 @@ public abstract class MovingObject : MonoBehaviour
     // MovingObject를 상속받은 오브젝트의 velocity를 바꾼다.
     protected void SetVelocity()
     {
-        vector = GetVector();
+        if(!isKnockBacking)
+        {
+            vector = GetVector();
 
-        rigidBody.velocity = vector.normalized * speed;
+            rigidBody.velocity = vector.normalized * speed;
+        }    
+    }
+
+    public void KnockBack(Vector2 attackedVelocity) {
+        isKnockBacking = true;
+        StartCoroutine(DoKnockBack(attackedVelocity.normalized));
+    }
+
+    protected IEnumerator DoKnockBack(Vector2 attackedVelocity) {
+        rigidBody.AddForce(attackedVelocity * forceMagnitude, ForceMode2D.Impulse);
+        yield return new WaitForSeconds(0.1f);
+        isKnockBacking = false;
+        yield return null;
     }
 
     // 적절한 방식으로 벡터값을 얻는다.

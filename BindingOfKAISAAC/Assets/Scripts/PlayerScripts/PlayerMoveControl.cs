@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 // 플레이어의 움직임을 제어하는 스크립트
@@ -12,6 +13,7 @@ public class PlayerMoveControl : MovingObject
 
     private Animator animator;
     private PlayerHealth playerHealth;
+    
 
     // Start is called before the first frame update
     protected override void Start()
@@ -66,7 +68,13 @@ public class PlayerMoveControl : MovingObject
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Enemy") {
-            playerHealth.PlayerHit();
+            playerHealth.PlayerHit(other);
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D other) {
+        if (other.gameObject.tag == "Enemy") {
+            playerHealth.PlayerHit(other);
         }
     }
 

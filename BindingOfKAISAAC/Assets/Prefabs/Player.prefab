@@ -152,7 +152,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 786139253
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -212,10 +212,10 @@ MonoBehaviour:
   bullet: {fileID: 515954727693973940, guid: 46ba43f59fc251345b4a7ae979d9ae42, type: 3}
   pos: {fileID: 373469960}
   canAttack: 1
-  range: 0
-  cooltime: 0
-  damage: 0
-  shotSpeed: 0
+  range: 10
+  coolTime: 0.3
+  damage: 3.5
+  shotSpeed: 6
   playerAttackDirection: {x: 0, y: 0}
 --- !u!114 &114304342
 MonoBehaviour:
@@ -229,26 +229,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa9e5ef6281981b43a9c086f49355318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 16
-  maxHealth: 16
+  health: 6
+  maxHealth: 6
   canBeHit: 1
-  hearts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   fullHeart: {fileID: 4449572975861231009, guid: 311ec9b2c516a234284d244fc90d0423,
     type: 3}
   halfHeart: {fileID: -5432046949310587472, guid: 311ec9b2c516a234284d244fc90d0423,

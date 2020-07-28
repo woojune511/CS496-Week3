@@ -11,28 +11,31 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth;
     // -----------------------------------------------------------------------------
     public bool canBeHit = true;
-    public Image[] hearts;
+    private GameObject[] hearts;
     public Sprite fullHeart;
     public Sprite halfHeart;
     public Sprite emptyHeart;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
+    private PlayerMoveControl playerMoveControl;
 
 
-    void Start() {
+    public void Start() {
         canBeHit = true;
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        hearts = GameObject.FindGameObjectsWithTag("Heart");
+        playerMoveControl = GetComponent<PlayerMoveControl>();
         UpdateHearts();
     }
     // Update is called once per frame
     void Update()
     {
-        
+        UpdateHearts();
     }
 
     // 현재의 체력에 맞추어 하트 UI를 업데이트 하는 함수
-    void UpdateHearts() {
+    public void UpdateHearts() {
         if (health > maxHealth) 
         {
             health = maxHealth;
@@ -41,28 +44,30 @@ public class PlayerHealth : MonoBehaviour
         int healthIndex = health >> 1;
 
         for (int i = 0; i < hearts.Length; i++) {
+            Image tempImage = hearts[i].GetComponent<Image>();
+
             if(i < healthIndex) {
-                hearts[i].sprite = fullHeart;
+                tempImage.sprite = fullHeart;
             } 
             else if(i == healthIndex && (health % 2 == 1)) 
             {
-                hearts[i].sprite = halfHeart;
+                tempImage.sprite = halfHeart;
             }
             else {
-                hearts[i].sprite = emptyHeart;
+                tempImage.sprite = emptyHeart;
             }
 
             if(i < (maxHealth >> 1)) {
-                hearts[i].enabled = true;
+                tempImage.enabled = true;
             } else {
-                hearts[i].enabled = false;
+                tempImage.enabled = false;
             }
         }
     }
 
 
     // 플레이어가 피격당했을 때 => 1. 체력이 깎인다(+ 하트 업데이트) 2. 게임오버인지 체크한다 3. 피격 모션이 재생된다 4. 피격 모션이 재생되는 동안은 무적
-    public void PlayerHit() {
+    public void PlayerHit(Collision2D other) {
         if(canBeHit)
         {
             health--;
@@ -71,6 +76,7 @@ public class PlayerHealth : MonoBehaviour
                 return;
             }
             UpdateHearts();
+            PlayerKnockBack(other);
             // 무적 시간 시작
             canBeHit = false;
             // 피격 애니메이션 재생
@@ -78,10 +84,38 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void PlayerHit(Collider2D other) {
+        if(canBeHit)
+        {
+            health--;
+            if(isGameOver()) {
+                GameOver();
+                return;
+            }
+            UpdateHearts();
+            PlayerKnockBack(other);
+            // 무적 시간 시작
+            canBeHit = false;
+            // 피격 애니메이션 재생
+            StartCoroutine(UnBeatTime());
+        }
+    }
+
+    private void PlayerKnockBack(Collision2D other) {
+        Vector2 attackedVelocity = other.rigidbody.velocity;
+        playerMoveControl.KnockBack(attackedVelocity);
+    }
+
+    private void PlayerKnockBack(Collider2D other) {
+        Vector2 attackedVelocity = other.attachedRigidbody.velocity;
+        playerMoveControl.KnockBack(attackedVelocity);
+    }
+
     public void GameOver() {
         // TODO : 죽는 모션 재생하기
         Destroy(gameObject);
         // TODO: 게임오버 화면으로 넘어가기
+        GameManager.instance.GameOver();
     }
 
     IEnumerator UnBeatTime() {
