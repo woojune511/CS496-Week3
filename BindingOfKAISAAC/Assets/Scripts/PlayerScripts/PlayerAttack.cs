@@ -62,7 +62,7 @@ public class PlayerAttack : MonoBehaviour
         Instantiate(bullet, pos.position, transform.rotation);
     }
 
-     IEnumerator WaitForIt()
+    IEnumerator WaitForIt()
     {
         yield return new WaitForSeconds(coolTime);
         canAttack = true;

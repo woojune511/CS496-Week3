@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - Start
   - Heart
+  - EnemyBullet
+  - BossEnemy
   layers:
   - Default
   - TransparentFX

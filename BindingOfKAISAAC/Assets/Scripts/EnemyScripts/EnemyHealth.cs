@@ -36,6 +36,8 @@ public class EnemyHealth : MonoBehaviour
     }
 
     void Die() {
+        if(gameObject.tag == "BossEnemy")
+            GameManager.instance.isBossDead = true;
         Destroy(gameObject);
         Instantiate(explosionEffect, popTransfrom.position, transform.rotation);
     }

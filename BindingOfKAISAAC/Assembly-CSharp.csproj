@@ -36,9 +36,11 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\EnemyScripts\Boss1Logic.cs" />
+     <Compile Include="Assets\Scripts\EnemyScripts\BossPatternManager.cs" />
      <Compile Include="Assets\Scripts\EnemyScripts\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\EnemyScripts\MeleeEnemyLogic.cs" />
-     <Compile Include="Assets\Scripts\EnemyScripts\RangedEnemy.cs" />
+     <Compile Include="Assets\Scripts\EnemyScripts\RangedEnemyLogic.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\MovingObject.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\Bullet.cs" />
@@ -46,6 +48,7 @@
      <Compile Include="Assets\Scripts\PlayerScripts\PlayerAttack.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\PlayerMoveControl.cs" />
+     <Compile Include="Assets\Scripts\UIScripts\BossHealthBar.cs" />
      <Compile Include="Assets\Scripts\UIScripts\UIGameOver.cs" />
      <None Include="Assets\spritefont_and_other\document_and_picturelist\readme.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />

@@ -17,8 +17,7 @@ public class GameManager : MonoBehaviour
     Quaternion StartingRotate;
     public bool isStarted = false;
 
-
-
+    public bool isBossDead = false;
 
     // -------------------------------[PLAYER STATUS TEXT]------------------------------
     [SerializeField]

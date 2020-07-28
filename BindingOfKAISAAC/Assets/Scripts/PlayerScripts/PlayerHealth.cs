@@ -84,8 +84,30 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void PlayerHit(Collider2D other) {
+        if(canBeHit)
+        {
+            health--;
+            if(isGameOver()) {
+                GameOver();
+                return;
+            }
+            UpdateHearts();
+            PlayerKnockBack(other);
+            // 무적 시간 시작
+            canBeHit = false;
+            // 피격 애니메이션 재생
+            StartCoroutine(UnBeatTime());
+        }
+    }
+
     private void PlayerKnockBack(Collision2D other) {
         Vector2 attackedVelocity = other.rigidbody.velocity;
+        playerMoveControl.KnockBack(attackedVelocity);
+    }
+
+    private void PlayerKnockBack(Collider2D other) {
+        Vector2 attackedVelocity = other.attachedRigidbody.velocity;
         playerMoveControl.KnockBack(attackedVelocity);
     }
 
