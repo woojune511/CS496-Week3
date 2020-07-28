@@ -114,7 +114,7 @@ MonoBehaviour:
   bullet: {fileID: 3357391271460133908, guid: 352eb921b4048ba4c9562fe10e902c0f, type: 3}
   firePos: {fileID: 1979333821607217044}
   canAttack: 1
-  coolTime: 0.5
+  coolTime: 1
   shotSpeed: 4
   attackDirection: {x: 0, y: 0}
 --- !u!114 &1979333821788564312
@@ -217,7 +217,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -188713007
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

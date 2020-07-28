@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using rnd = System.Random;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null; // Static instance of GameManager which allows it to be accessed by any other script.
+
+    public GameObject playerCam;
+    public GameObject roomMacro;
 
     public GameObject player;
     GameObject playerInstance;
@@ -17,8 +21,11 @@ public class GameManager : MonoBehaviour
     Quaternion StartingRotate;
     public bool isStarted = false;
 
-    public bool isBossDead = false;
+    public bool isBossDead = true;
 
+    public bool isBossRoomEntered = false;
+
+    rnd rand = new rnd(System.Guid.NewGuid().GetHashCode());
     // -------------------------------[PLAYER STATUS TEXT]------------------------------
     [SerializeField]
     private Text dmgText;
@@ -88,6 +95,7 @@ public class GameManager : MonoBehaviour
     }
 
     void StartGame() {
+        GameObject.Find("Main Camera").SetActive(false);
         Time.timeScale = 1f; // 정상 시간흐름
 
         Instantiate(player, StartingPos, StartingRotate);
@@ -97,6 +105,8 @@ public class GameManager : MonoBehaviour
         playerAttack = playerInstance.GetComponent<PlayerAttack>();
         playerHealth.health = playerHealth.maxHealth; // 풀피로 시작
         UpdateStatusText();
+        Instantiate(playerCam);
+        Instantiate(roomMacro).GetComponent<RoomSpawner>().playerTr = playerInstance.transform;
     }
 
     public void GameOver()
@@ -105,6 +115,14 @@ public class GameManager : MonoBehaviour
         enabled = false;
         // GameOver 화면으로
         GameObject.Find("GameOver").transform.Find("GameOverPanel").gameObject.SetActive(true);
+    }
+
+    public void GameClear()
+    {
+        isStarted = false;
+        enabled = false;
+        // GameOver 화면으로
+        GameObject.Find("GameClear").transform.Find("GameClearPanel").gameObject.SetActive(true);
     }
 
     public void UpdateHearts() {
@@ -117,5 +135,30 @@ public class GameManager : MonoBehaviour
         dmgText.text = $"DMG: {playerAttack.damage}";
         shotSpeedText.text = $"SHT: {playerAttack.shotSpeed}";
         speedText.text = $"SPD: {playerMoveControl.speed}";
+    }
+
+    public void RandomStatusUP() {
+        int randInt = rand.Next(21);
+        if(randInt <= 3) {
+            playerAttack.damage += 0.5f;
+        } else if (randInt <= 7) {
+            playerAttack.range += 0.75f;
+        } else if (randInt <= 11) {
+            playerAttack.coolTime *= 0.95f;
+        } else if (randInt <= 15) {
+            playerAttack.shotSpeed *= 1.10f;
+        } else if (randInt <= 19) {
+            playerMoveControl.speed += 0.5f;
+        } else if (randInt == 20) {
+            playerHealth.maxHealth += 1;
+            playerHealth.health += 1;
+        }
+
+        UpdateStatusText();
+    }
+
+    public void RecoverHealth() {
+        playerHealth.health += 1;
+        UpdateHearts();
     }
 }

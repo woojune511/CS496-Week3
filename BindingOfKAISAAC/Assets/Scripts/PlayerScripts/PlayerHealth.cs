@@ -11,7 +11,9 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth;
     // -----------------------------------------------------------------------------
     public bool canBeHit = true;
-    private GameObject[] hearts;
+    
+    [SerializeField]
+    private Image[] hearts;
     public Sprite fullHeart;
     public Sprite halfHeart;
     public Sprite emptyHeart;
@@ -24,7 +26,7 @@ public class PlayerHealth : MonoBehaviour
         canBeHit = true;
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        hearts = GameObject.FindGameObjectsWithTag("Heart");
+        hearts = GameObject.Find("InGameUI").GetComponentsInChildren<Image>();
         playerMoveControl = GetComponent<PlayerMoveControl>();
         UpdateHearts();
     }
@@ -44,8 +46,27 @@ public class PlayerHealth : MonoBehaviour
         int healthIndex = health >> 1;
 
         for (int i = 0; i < hearts.Length; i++) {
-            Image tempImage = hearts[i].GetComponent<Image>();
+            // Image tempImage = hearts[i].GetComponent<Image>();
 
+            if(i < healthIndex) {
+                hearts[i].sprite = fullHeart;
+            } 
+            else if(i == healthIndex && (health % 2 == 1)) 
+            {
+                hearts[i].sprite = halfHeart;
+            }
+            else {
+                hearts[i].sprite = emptyHeart;
+            }
+
+            if(i < (maxHealth >> 1)) {
+                hearts[i].enabled = true;
+            } else {
+                hearts[i].enabled = false;
+            }
+
+
+            /*
             if(i < healthIndex) {
                 tempImage.sprite = fullHeart;
             } 
@@ -62,6 +83,7 @@ public class PlayerHealth : MonoBehaviour
             } else {
                 tempImage.enabled = false;
             }
+            */
         }
     }
 
@@ -113,7 +135,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void GameOver() {
         // TODO : 죽는 모션 재생하기
-        Destroy(gameObject);
+        gameObject.SetActive(false);
         // TODO: 게임오버 화면으로 넘어가기
         GameManager.instance.GameOver();
     }

@@ -12,10 +12,14 @@ public class BossHealthBar : MonoBehaviour
 
     private bool wasSpawn = false;
 
+    void Start() {
+        wasSpawn = false;
+    }
     // Update is called once per frame
     void Update()
     {
-        if (!GameManager.instance.isStarted)
+        
+        if (!GameManager.instance.isBossRoomEntered)
             return;
 
         if(wasSpawn && GameManager.instance.isBossDead) {
@@ -26,11 +30,15 @@ public class BossHealthBar : MonoBehaviour
         if(!GameManager.instance.isBossDead && !wasSpawn) {
             wasSpawn = true;
             bossHealthBar.gameObject.SetActive(true);
-            SetBossHealth();
+            Invoke("SetBossHealth", 1.0f);
         }
 
-        bossHealthBar.value = bossHealth.health * bossMaxHealthInverse * 100;
+        if(bossHealth != null)
+            bossHealthBar.value = bossHealth.health * bossMaxHealthInverse * 100;
+        
     }
+
+
 
     private void SetBossHealth() {
         bossHealth = GameObject.FindGameObjectWithTag("BossEnemy").GetComponent<EnemyHealth>();

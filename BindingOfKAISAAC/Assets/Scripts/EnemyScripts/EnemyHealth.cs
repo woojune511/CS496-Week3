@@ -36,8 +36,13 @@ public class EnemyHealth : MonoBehaviour
     }
 
     void Die() {
-        if(gameObject.tag == "BossEnemy")
+        if(gameObject.tag == "BossEnemy") {
+            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("EnemyBullet")) {
+                Destroy(obj);
+            }
             GameManager.instance.isBossDead = true;
+            GameManager.instance.GameClear();
+        }
         Destroy(gameObject);
         Instantiate(explosionEffect, popTransfrom.position, transform.rotation);
     }

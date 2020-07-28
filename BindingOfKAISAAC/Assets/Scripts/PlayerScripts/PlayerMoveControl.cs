@@ -62,7 +62,19 @@ public class PlayerMoveControl : MovingObject
     }
 
     protected override void OnTriggerEnter2D(Collider2D other) {
-
+        if(other.tag == "Item") 
+        {
+            GameManager.instance.RandomStatusUP();
+            Destroy(other.gameObject);
+        } 
+        else if (other.tag == "Heart") 
+        {
+            if(playerHealth.health == playerHealth.maxHealth) {
+                return;
+            }
+            GameManager.instance.RecoverHealth();
+            Destroy(other.gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
