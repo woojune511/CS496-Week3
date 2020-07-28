@@ -74,7 +74,6 @@ public class Room: MonoBehaviour
 
     public void GetDoor(){
         GameObject DoorSprite = GameObject.Find("Door");
-        Debug.Log($"DOOR IS NULL? {DoorSprite == null}");
         if(room_orient[0]){
             // GameObject door1 = Instantiate(GameObject.Find("Door"), room_position + new Vector3(7, 9, 0), Quaternion.identity);
             GameObject door1 = Instantiate(DoorSprite, room_position + new Vector3(7, 9, 0), Quaternion.identity);
