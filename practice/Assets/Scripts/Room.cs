@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Diagnostics.Contracts;
@@ -12,6 +13,12 @@ public class Room: MonoBehaviour
     [HideInInspector] public int roomSize_y = 10;
     [HideInInspector] public Vector3 room_position;
     [HideInInspector] public bool isBossRoom = false;
+    [HideInInspector] public bool isItemRoom = false;
+    public int MonsterCount = 0;
+    public int ItemCount = 0;
+
+    public bool isCleared = false; // 과거에 지나간 방인지 나타냄
+
 
     public Room(bool[] orient, Vector3 pos){
         Contract.Requires(orient.Length == 4);
@@ -24,8 +31,13 @@ public class Room: MonoBehaviour
             GameObject BossIcon = GameObject.Find("Boss Icon");
             Instantiate(BossIcon, room_position + new Vector3(7.5f, 4.5f, -1), Quaternion.identity);
         }
+        else if(isItemRoom){
+            GameObject ItemIcon = GameObject.Find("Item Icon");
+            Instantiate(ItemIcon, room_position + new Vector3(7.5f, 4.5f, -1), Quaternion.identity);
+        }
         GetWall();
         GetFloor();
+        GetDoor();
     }
 
     public void GetWall(){ 
@@ -60,12 +72,30 @@ public class Room: MonoBehaviour
         }
     }
 
-    void onTriggerEnter2D(Collider2D other){
-        ;
+    public void GetDoor(){
+        GameObject DoorSprite = GameObject.Find("Door");
+        Debug.Log($"DOOR IS NULL? {DoorSprite == null}");
+        if(room_orient[0]){
+            // GameObject door1 = Instantiate(GameObject.Find("Door"), room_position + new Vector3(7, 9, 0), Quaternion.identity);
+            GameObject door1 = Instantiate(DoorSprite, room_position + new Vector3(7, 9, 0), Quaternion.identity);
+            GameObject door2 = Instantiate(DoorSprite, room_position + new Vector3(8, 9, 0), Quaternion.identity);
+        }
+        if(room_orient[1]){
+            GameObject door1 = Instantiate(DoorSprite, room_position + new Vector3(7, 0, 0), Quaternion.identity);
+            GameObject door2 = Instantiate(DoorSprite, room_position + new Vector3(8, 0, 0), Quaternion.identity);
+        }
+        if(room_orient[2]){
+            GameObject door1 = Instantiate(DoorSprite, room_position + new Vector3(0, 4, 0), Quaternion.identity);
+            GameObject door2 = Instantiate(DoorSprite, room_position + new Vector3(0, 5, 0), Quaternion.identity);
+        }
+        if(room_orient[3]){
+            GameObject door1 = Instantiate(DoorSprite, room_position + new Vector3(15, 4, 0), Quaternion.identity);
+            GameObject door2 = Instantiate(DoorSprite, room_position + new Vector3(15, 5, 0), Quaternion.identity);
+        }
     }
 
     void Start(){
-    
+        
     }
 
 }
